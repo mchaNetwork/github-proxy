@@ -1,9 +1,17 @@
+/*
+ * Original Source: https://github.com/hunshcn/gh-proxy
+ * Original License: MIT
+ * Original Author: GitHub@hunshcn
+ * Modifier: GitHub@KevinZonda & FastGit UK (GitHub@FastGitORG)
+ * License: MIT
+ */
+
 'use strict'
 
 /**
  * static files (404.html, sw.js, conf.js)
  */
-const ASSET_URL = 'https://hunshcn.github.io/gh-proxy/'
+const ASSET_URL = 'https://fastgitorg.github.io/cfworker/'
 // 前缀，如果自定义路由为example.com/gh/*，将PREFIX改为 '/gh/'，注意，少一个杠都会错！
 const PREFIX = '/'
 // git使用cnpmjs镜像、分支文件使用jsDelivr镜像的开关，0为关闭，默认开启
@@ -29,7 +37,7 @@ const PREFLIGHT_INIT = {
  */
 function makeRes(body, status = 200, headers = {}) {
     headers['access-control-allow-origin'] = '*'
-    return new Response(body, {status, headers})
+    return new Response(body, { status, headers })
 }
 
 
@@ -65,18 +73,23 @@ async function fetchHandler(e) {
     }
     // cfworker 会把路径中的 `//` 合并成 `/`
     path = urlObj.href.substr(urlObj.origin.length + PREFIX.length).replace(/^https?:\/+/, 'https://')
+
+    // Convert FastGit To GitHub
+    // path = path.replace('https://raw.fastgit.org', 'https://raw.githubusercontent.com').replace('https://hub.fastgit.org', 'https://github.com').replace('https://download.fastgit.org', 'https://github.com').replace('https://archive.fastgit.org', 'https://github.com').replace('https://codeload.fastgit.org', 'https://codeload.github.com')
+
     const exp1 = /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/(?:releases|archive)\/.*$/i
     const exp2 = /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/(?:blob)\/.*$/i
     const exp3 = /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/(?:info|git-).*$/i
     const exp4 = /^(?:https?:\/\/)?raw\.githubusercontent\.com\/.+?\/.+?\/.+?\/.+$/i
     const exp5 = /^(?:https?:\/\/)?gist\.(?:githubusercontent|github)\.com\/.+?\/.+?\/.+$/i
+    const exp6 = /^(?:https?:\/\/).+?\.github\.com\/.*$/i
     if (path.search(exp1) === 0 || path.search(exp5) === 0 || !Config.cnpmjs && (path.search(exp3) === 0 || path.search(exp4) === 0)) {
         return httpHandler(req, path)
     } else if (path.search(exp2) === 0) {
-        if (Config.jsdelivr){
+        if (Config.jsdelivr) {
             const newUrl = path.replace('/blob/', '@').replace(/^(?:https?:\/\/)?github\.com/, 'https://cdn.jsdelivr.net/gh')
             return Response.redirect(newUrl, 302)
-        }else{
+        } else {
             path = path.replace('/blob/', '/raw/')
             return httpHandler(req, path)
         }
@@ -86,7 +99,10 @@ async function fetchHandler(e) {
     } else if (path.search(exp4) === 0) {
         const newUrl = path.replace(/(?<=com\/.+?\/.+?)\/(.+?\/)/, '@$1').replace(/^(?:https?:\/\/)?raw\.githubusercontent\.com/, 'https://cdn.jsdelivr.net/gh')
         return Response.redirect(newUrl, 302)
-    } else {
+    } else if (path.search(exp6) === 0 && !path.startsWith('https://api.github.com')) {
+        return httpHandler(req, path)
+    }
+    else {
         return fetch(ASSET_URL + path)
     }
 }
@@ -101,8 +117,7 @@ function httpHandler(req, pathname) {
 
     // preflight
     if (req.method === 'OPTIONS' &&
-        reqHdrRaw.has('access-control-request-headers')
-    ) {
+        reqHdrRaw.has('access-control-request-headers')) {
         return new Response(null, PREFLIGHT_INIT)
     }
 
