@@ -1,0 +1,10 @@
+name = "github-proxy"
+type = "javascript"
+workers_dev = true
+
+compatibility_date = "2021-11-19"
+
+[build]
+command = "yarn build"
+[build.upload]
+format = "service-worker"

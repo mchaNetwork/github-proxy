@@ -1,10 +1,11 @@
-# cfworker
+# github-proxy
 
-This repository is to help FastGit UK provide service to the regions which is previously unserviceable. We try to use CloudFlare Workers to help us create amazing work.
+Properly implemented proxy for GitHub running on Cloudflare Workers.
 
-## Credit
+## Acknowledgements
 
-Thanks to [GitHub@hunshcn](https://github.com/hunshcn)'s https://github.com/hunshcn/gh-proxy. This repository is licensed under MIT license. We use it as our fundamentals, without it, we will not be able to build our work.
+- [hunshcn/gh-proxy](https://github.com/hunshcn/gh-proxy)
+- [FastGit](https://github.com/FastGitORG/cfworker) for stripping down the original worker script.
 
 ## License
 
