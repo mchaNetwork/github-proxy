@@ -1,6 +1,6 @@
 import { invalidURL, serveStatic, transformClientRequest } from './helpers'
 
-addEventListener('fetch', event => {
+addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event.request))
 })
 
@@ -20,7 +20,8 @@ async function handleRequest (request: Request): Promise<Response> {
   try {
     githubURL = new URL(path)
     githubURL.protocol = 'https:'
-  } catch { // try parsing with protocol again
+  } catch {
+    // try parsing with protocol again
     path = `https://${path}`
 
     try {
@@ -33,18 +34,20 @@ async function handleRequest (request: Request): Promise<Response> {
   // Proxy request to GitHub.
   switch (githubURL.host) {
     case 'github.com': {
-      return githubURL.pathname.search(/^\/.+?\/.+?\/(?:releases|archive|suites|raw|info|git-)\/.*$/) === 0
-        ? (await transformClientRequest(request, githubURL))
+      return githubURL.pathname.search(
+        /^\/.+?\/.+?\/(?:releases|archive|suites|raw|info|git-)\/.*$/
+      ) === 0
+        ? await transformClientRequest(request, githubURL)
         : invalidURL(path)
     }
     case 'raw.githubusercontent.com': {
       return githubURL.pathname.search(/^(?:\/.+?){3}\/.+$/i) === 0
-        ? (await transformClientRequest(request, githubURL))
+        ? await transformClientRequest(request, githubURL)
         : invalidURL(path)
     }
     case 'gist.githubusercontent.com': {
       return githubURL.pathname.search(/^\/.+?\/.+?\/.+$/i) === 0
-        ? (await transformClientRequest(request, githubURL))
+        ? await transformClientRequest(request, githubURL)
         : invalidURL(path)
     }
     default: {

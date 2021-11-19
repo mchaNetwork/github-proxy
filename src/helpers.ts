@@ -1,13 +1,18 @@
-export async function transformClientRequest (request: Request, url: URL): Promise<Response> {
+export async function transformClientRequest (
+  request: Request,
+  url: URL
+): Promise<Response> {
   // Handle preflight requests
-  if (request.method === 'OPTIONS' &&
+  if (
+    request.method === 'OPTIONS' &&
     request.headers.has('access-control-request-headers')
   ) {
     return new Response(undefined, {
       status: 204,
       headers: new Headers({
         'access-control-allow-origin': '*',
-        'access-control-allow-methods': 'GET,POST,PUT,PATCH,TRACE,DELETE,HEAD,OPTIONS',
+        'access-control-allow-methods':
+          'GET,POST,PUT,PATCH,TRACE,DELETE,HEAD,OPTIONS',
         'access-control-max-age': '1728000'
       })
     })
@@ -51,10 +56,17 @@ const staticAssets = {
   }
 }
 
-export function serveStatic (key: keyof typeof staticAssets = 'not-found'): Response {
-  return new Response(staticAssets[key].data, { headers: { 'Content-Type': staticAssets[key].mime } })
+export function serveStatic (
+  key: keyof typeof staticAssets = 'not-found'
+): Response {
+  return new Response(staticAssets[key].data, {
+    headers: { 'Content-Type': staticAssets[key].mime }
+  })
 }
 
 export function invalidURL (url: string): Response {
-  return new Response(`Invalid URL: ${url}`, { status: 400, headers: { 'Content-Type': 'text/plain' } })
+  return new Response(`Invalid URL: ${url}`, {
+    status: 400,
+    headers: { 'Content-Type': 'text/plain' }
+  })
 }

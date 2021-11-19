@@ -13,6 +13,7 @@
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@tsconfig/recommended": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
     "esbuild": "^0.13.14",
     "eslint": "^8.2.0",
     "eslint-config-standard-with-typescript": "^21.0.1",
@@ -48,13 +49,35 @@
   "scripts": {
     "build": "rimraf dist && esbuild --bundle src/index.ts --minify --sourcemap --outfile=dist/index.js",
     "lint": "eslint ./src --fix",
-    "pretty": "prettier src/**/* --write",
-    "prerelease": "yarn test && yarn build",
+    "prerelease": "yarn lint && yarn build",
     "release": "standard-version",
-    "postrelease": "git push --follow-tags",
-    "pretest": "yarn lint"
+    "postrelease": "git push --follow-tags"
   },
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.4.0"
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "lint-staged"
+      ],
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "yarn lint"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --write"
+    ]
   }
 }
