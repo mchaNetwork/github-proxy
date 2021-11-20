@@ -35,7 +35,7 @@ async function handleRequest (request: Request): Promise<Response> {
   switch (githubURL.host) {
     case 'github.com': {
       return githubURL.pathname.search(
-        /^\/.+?\/.+?\/(?:releases|archive|suites|raw|info|git-)\/.*$/
+        /^\/.+?\/.+?\/(?:releases|archive|suites|raw|info|git-).*$/
       ) === 0
         ? await transformClientRequest(request, githubURL)
         : invalidURL(path)
