@@ -1,6 +1,7 @@
 # github-proxy
 
-Properly implemented proxy for GitHub running on Cloudflare Workers.
+Properly implemented proxy for GitHub running on Cloudflare Workers,
+trying to be feature-rich while not bloated.
 
 ## Acknowledgements
 
