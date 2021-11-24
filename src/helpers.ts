@@ -57,10 +57,12 @@ const staticAssets = {
 }
 
 export function serveStatic (
-  key: keyof typeof staticAssets = 'not-found'
+  key: keyof typeof staticAssets = 'not-found',
+  responseInit?: ResponseInit
 ): Response {
   return new Response(staticAssets[key].data, {
-    headers: { 'Content-Type': staticAssets[key].mime }
+    headers: { 'Content-Type': staticAssets[key].mime },
+    ...responseInit
   })
 }
 

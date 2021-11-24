@@ -51,7 +51,7 @@ async function handleRequest (request: Request): Promise<Response> {
         : invalidURL(path)
     }
     default: {
-      return serveStatic('not-found')
+      return serveStatic('not-found', { status: 404 })
     }
   }
 }
