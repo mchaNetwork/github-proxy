@@ -459,7 +459,7 @@
   dependencies:
     semver "7.3.5"
 
-"@size-limit/preset-small-lib@^7.0.3":
+"@size-limit/preset-small-lib@7.0.3":
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/@size-limit/preset-small-lib/-/preset-small-lib-7.0.3.tgz#2f9409e69d0d89f059b0b841e34bad972be47ddc"
   integrity sha512-UuA8ICz3BYWxbhJah8U5KxOUhA97AJbsNITp+Scy9aUXzbu2SqrsDTRmPU9ULCo3j4VgF53TBHXY4sdKC2adpw==
