@@ -24,7 +24,7 @@
     "eslint-plugin-tsdoc": "0.2.16",
     "eslint-plugin-unicorn": "39.0.0",
     "husky": "7.0.4",
-    "lint-staged": "12.1.2",
+    "lint-staged": "12.5.0",
     "prettier": "2.6.2",
     "size-limit": "7.0.8",
     "standard-version": "9.3.2",
