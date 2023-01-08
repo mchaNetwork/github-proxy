@@ -9,7 +9,7 @@
   "private": true,
   "devDependencies": {
     "@cloudflare/workers-types": "3.18.0",
-    "@cloudflare/wrangler": "1.19.12",
+    "@cloudflare/wrangler": "1.20.0",
     "@commitlint/cli": "17.4.0",
     "@commitlint/config-conventional": "17.4.0",
     "@size-limit/preset-small-lib": "7.0.8",
