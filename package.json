@@ -15,7 +15,7 @@
     "@size-limit/preset-small-lib": "7.0.8",
     "@tsconfig/recommended": "1.0.1",
     "@typescript-eslint/eslint-plugin": "5.43.0",
-    "esbuild": "0.14.42",
+    "esbuild": "0.16.15",
     "eslint": "8.16.0",
     "eslint-config-standard-with-typescript": "21.0.1",
     "eslint-plugin-import": "2.26.0",
