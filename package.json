@@ -21,7 +21,7 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.0.0",
-    "eslint-plugin-tsdoc": "0.2.16",
+    "eslint-plugin-tsdoc": "0.2.17",
     "eslint-plugin-unicorn": "39.0.0",
     "husky": "7.0.4",
     "lint-staged": "12.5.0",
