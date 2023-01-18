@@ -13,7 +13,7 @@
     "@commitlint/cli": "17.4.0",
     "@commitlint/config-conventional": "17.4.0",
     "@size-limit/preset-small-lib": "8.1.2",
-    "@tsconfig/recommended": "1.0.1",
+    "@tsconfig/recommended": "1.0.2",
     "@typescript-eslint/eslint-plugin": "5.43.0",
     "esbuild": "0.16.15",
     "eslint": "8.16.0",
