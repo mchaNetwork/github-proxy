@@ -14,7 +14,7 @@
     "@commitlint/config-conventional": "17.4.2",
     "@size-limit/preset-small-lib": "8.1.2",
     "@tsconfig/recommended": "1.0.2",
-    "@typescript-eslint/eslint-plugin": "5.43.0",
+    "@typescript-eslint/eslint-plugin": "5.52.0",
     "esbuild": "0.16.15",
     "eslint": "8.32.0",
     "eslint-config-standard-with-typescript": "21.0.1",
