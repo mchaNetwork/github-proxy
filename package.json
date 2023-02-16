@@ -10,8 +10,8 @@
   "devDependencies": {
     "@cloudflare/workers-types": "4.20230214.0",
     "@cloudflare/wrangler": "1.20.0",
-    "@commitlint/cli": "17.4.2",
-    "@commitlint/config-conventional": "17.4.2",
+    "@commitlint/cli": "17.4.3",
+    "@commitlint/config-conventional": "17.4.3",
     "@size-limit/preset-small-lib": "8.1.2",
     "@tsconfig/recommended": "1.0.2",
     "@typescript-eslint/eslint-plugin": "5.43.0",
