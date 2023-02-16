@@ -1,10 +1,5 @@
 name = "github-proxy"
-type = "javascript"
 workers_dev = true
+main = "src/index.ts"
 
-compatibility_date = "2021-11-19"
-
-[build]
-command = "yarn build"
-[build.upload]
-format = "service-worker"
+compatibility_date = "2023-02-16"
