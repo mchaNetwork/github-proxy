@@ -9,8 +9,8 @@
   "private": true,
   "devDependencies": {
     "@cloudflare/workers-types": "4.20230214.0",
-    "@commitlint/cli": "17.4.3",
-    "@commitlint/config-conventional": "17.4.3",
+    "@commitlint/cli": "17.4.4",
+    "@commitlint/config-conventional": "17.4.4",
     "@size-limit/preset-small-lib": "8.2.4",
     "@tsconfig/recommended": "1.0.2",
     "@typescript-eslint/eslint-plugin": "5.52.0",
