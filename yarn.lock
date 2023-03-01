@@ -35,10 +35,10 @@
   dependencies:
     mime "^3.0.0"
 
-"@cloudflare/workers-types@4.20230221.0":
-  version "4.20230221.0"
-  resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-4.20230221.0.tgz#d0cca6d1100f5aaf4550db23011a5dc9687a2ef3"
-  integrity sha512-Ge8csuFQMNv3hd8r85PFWv4KV6bHAtKoBaanTkjbbeJS+mizoiBn4OBva0CFQiGfRJklFSGd4OxuCuiK05kogg==
+"@cloudflare/workers-types@4.20230228.0":
+  version "4.20230228.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-4.20230228.0.tgz#f2311f4f8943f15d097426bcb9a0e7d3aa5b5c1d"
+  integrity sha512-tDaqH3DrKmDoe/YrCnzVSqjNH6GnUOOajv2Ztj2h7BPLFyYTb81iCkARgb+G4bpxhn7y4f1KxxDT2+Yp4rt7Hg==
 
 "@commitlint/cli@17.4.4":
   version "17.4.4"

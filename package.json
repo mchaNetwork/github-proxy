@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20230221.0",
+    "@cloudflare/workers-types": "4.20230228.0",
     "@commitlint/cli": "17.4.4",
     "@commitlint/config-conventional": "17.4.4",
     "@size-limit/preset-small-lib": "8.2.4",
