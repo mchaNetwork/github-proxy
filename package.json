@@ -15,7 +15,7 @@
     "@tsconfig/recommended": "1.0.2",
     "@typescript-eslint/eslint-plugin": "5.54.1",
     "esbuild": "0.17.11",
-    "eslint": "8.35.0",
+    "eslint": "8.36.0",
     "eslint-config-standard-with-typescript": "34.0.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-node": "11.1.0",
