@@ -4628,10 +4628,10 @@ wordwrap@^1.0.0:
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
   integrity sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus=
 
-wrangler@2.12.2:
-  version "2.12.2"
-  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-2.12.2.tgz#2b3dbe0af012510aa81e1cab167a838e20da4a38"
-  integrity sha512-pjdZvcjiFD6mI3Nncsw3hBv3rxjMx0n4Mtp+Tsql/hvr0LpOmHKlW/aMeYx/fVUmjEKfWBSULc1vgM02O2UTWQ==
+wrangler@2.12.3:
+  version "2.12.3"
+  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-2.12.3.tgz#6df5599013e2d2d4ec962e04f92d55a52474557d"
+  integrity sha512-0skqT9qBbchiVY57YwQKFCFnuUo2Lg7e0vCChJ9FWcWZ/CXsPXeBMeVA8N/p72LuhrtZlqTFN7TsNOd8jm8KcQ==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.2.0"
     "@esbuild-plugins/node-globals-polyfill" "^0.1.1"
