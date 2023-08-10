@@ -9,7 +9,7 @@
   "private": true,
   "devDependencies": {
     "@cloudflare/workers-types": "4.20230807.0",
-    "@commitlint/cli": "17.7.0",
+    "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
     "@size-limit/preset-small-lib": "8.2.6",
     "@tsconfig/recommended": "1.0.2",
