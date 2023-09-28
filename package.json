@@ -28,7 +28,7 @@
     "size-limit": "8.2.6",
     "standard-version": "9.5.0",
     "typescript": "5.2.2",
-    "wrangler": "3.10.0"
+    "wrangler": "3.10.1"
   },
   "eslintConfig": {
     "extends": [
