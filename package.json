@@ -11,7 +11,7 @@
     "@cloudflare/workers-types": "4.20231016.0",
     "@commitlint/cli": "17.8.1",
     "@commitlint/config-conventional": "17.8.1",
-    "@size-limit/preset-small-lib": "8.2.6",
+    "@size-limit/preset-small-lib": "9.0.0",
     "@tsconfig/recommended": "1.0.3",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "esbuild": "0.19.5",
