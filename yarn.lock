@@ -4582,10 +4582,10 @@ workerd@1.20231030.0:
     "@cloudflare/workerd-linux-arm64" "1.20231030.0"
     "@cloudflare/workerd-windows-64" "1.20231030.0"
 
-wrangler@3.17.0:
-  version "3.17.0"
-  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-3.17.0.tgz#4c96564ad7b5993f75670a173511313362bd5217"
-  integrity sha512-xMPB7mmGzAzeel5bFAKOIO7O+rIG1TT7+iRiu4RAjxPkCAWRAL79++zi7KJVFnyHzGh+PBF91ramBWH2m8VDUw==
+wrangler@3.17.1:
+  version "3.17.1"
+  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-3.17.1.tgz#1fc439b8a083795366dd17108c41fc3ab4cae190"
+  integrity sha512-Pr9+/tjFkthzG63uoVm1NtVvgokT6p92fy1UsOgrntHyTu0pZMC1VJzG0NC8Vhs+z/+yTT8AqVV6AiJb3w8ZOQ==
   dependencies:
     "@cloudflare/kv-asset-handler" "^0.2.0"
     "@esbuild-plugins/node-globals-polyfill" "^0.2.3"
