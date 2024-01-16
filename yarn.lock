@@ -3958,18 +3958,6 @@ signal-exit@^4.1.0:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-4.1.0.tgz#952188c1cbd546070e2dd20d0f41c0ae0530cb04"
   integrity sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==
 
-size-limit@11.0.1:
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-11.0.1.tgz#e34ab3302b83833843d578e70a2bf3c6da29f123"
-  integrity sha512-6L80ocVspWPrhIRg8kPl41VypqTGH8/lu9e6TJiSJpkNLtOR2h/EEqdAO/wNJOv/sUVtjX+lVEWrzBpItGP+gQ==
-  dependencies:
-    bytes-iec "^3.1.1"
-    chokidar "^3.5.3"
-    globby "^14.0.0"
-    lilconfig "^3.0.0"
-    nanospinner "^1.1.0"
-    picocolors "^1.0.0"
-
 size-limit@11.0.2:
   version "11.0.2"
   resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-11.0.2.tgz#a9b133d420270abe44489b075ca1b7960db3216b"
