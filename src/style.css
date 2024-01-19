@@ -1,0 +1,95 @@
+@import 'npm:ress';
+@import 'npm:nord/src/nord.css';
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+        'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol';
+    background: var(--nord0);
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 364px;
+    padding: 24px;
+    background: var(--nord4);
+    color: var(--nord0);
+    border-radius: 4px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    overflow: hidden;
+}
+
+a {
+    text-decoration-color: var(--nord10);
+    color: var(--nord10);
+}
+
+hr {
+	border: none;
+	border-bottom: solid 1px var(--nord0);
+	opacity: 0.12;
+    margin: 4px 0 24px;
+}
+
+form {
+    display: flex;
+	height: 24px;
+    #q {
+        flex-grow: 1;
+        outline-style: none;
+    }
+    button {
+    	height: 24px;
+    	width: 24px;
+    	&:hover, &:focus {
+    		background: var(--nord1);
+    		color: var(--nord4);
+    	}
+    }
+    &::before {
+    	content: '';
+    	width: 100%;
+    	margin-right: -100%;
+		border-bottom: solid 1px var(--nord0);
+    }
+}
+
+.input {
+	display: flex;
+	flex-direction: column;
+	&::after {
+		content: '';
+		border-top: solid 2px var(--nord10);
+		margin-top: -1.5px;
+		align-self: center;
+		width: 0;
+		transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+		@media not (prefers-reduced-motion) {
+			transition: width 0.2s;
+		}
+	}
+	&:has(form > #q:focus)::after {
+		width: 100%;
+	}
+	margin-bottom: 24px;
+}

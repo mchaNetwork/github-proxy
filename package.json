@@ -1,0 +1,94 @@
+{
+  "name": "github-proxy",
+  "private": true,
+  "description": "GitHub proxy on Cloudflare Workers",
+  "repository": "https://github.com/mchaNetwork/github-proxy",
+  "license": "MIT",
+  "author": "mochaaP <npm@mochaa.ws>",
+  "type": "module",
+  "main": "dist/_worker.js",
+  "scripts": {
+    "build": "rimraf dist && parcel build",
+    "deploy": "bun run test && bun run build && wrangler pages deploy dist",
+    "lint": "eslint .",
+    "size": "size-limit",
+    "start": "wrangler pages dev dist --compatibility-date=2024-01-01",
+    "test": "bun run lint && bun run size"
+  },
+  "browserslist": "Firefox ESR, iOS >= 12.5, Chrome >= 87",
+  "eslintConfig": {
+    "env": {
+      "es2024": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "extends": "./node_modules/xo/config/plugins.cjs",
+    "overrides": [
+      {
+        "files": [
+          "*.ts",
+          "*.tsx"
+        ],
+        "extends": [
+          "xo-typescript"
+        ],
+        "rules": {
+          "@typescript-eslint/ban-types": "off",
+          "import/extensions": "off",
+          "import/no-named-as-default": "off",
+          "n/prefer-global/process": "off"
+        }
+      }
+    ],
+    "ignorePatterns": [
+      "dist"
+    ]
+  },
+  "dependencies": {
+    "nord": "nordtheme/nord",
+    "ress": "^5.0.2",
+    "worktop": "next"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240117.0",
+    "@size-limit/preset-small-lib": "^11.0.2",
+    "parcel": "^2.11.0",
+    "rimraf": "^5.0.5",
+    "size-limit": "^11.0.2",
+    "wrangler": "^3.22.3",
+    "xo": "^0.56.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.3"
+  },
+  "@parcel/transformer-css": {
+    "drafts": {
+      "nesting": true
+    }
+  },
+  "size-limit": [
+    {
+      "path": "src/_worker.ts",
+      "brotli": false
+    }
+  ],
+  "targets": {
+    "frontend": {
+      "source": [
+        "src/index.html",
+        "src/404.html"
+      ],
+      "distDir": "dist/"
+    },
+    "main": {
+      "source": "src/_worker.ts",
+      "context": "web-worker",
+      "outputFormat": "esmodule",
+      "includeNodeModules": true,
+      "optimize": true
+    }
+  }
+}

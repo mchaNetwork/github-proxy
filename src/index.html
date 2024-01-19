@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>GitHub Proxy</title>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="icon" href="favicon.svg" />
+	<meta name="robots" content="noindex nofollow" />
+</head>
+
+<body>
+	<div class="main">
+		<div class="card">
+			<h1>🐙 GitHub Proxy</h1>
+			<div class="input">
+				<form>
+					<input type="url" id="q" placeholder="https://github.com/…" autofocus />
+					<button type="submit" onclick="window.open('/'+document.getElementById('q').value)">
+						→
+					</button>
+				</form>
+			</div>
+			<footer>
+				powered with ❤ by
+				<a href="https://github.com/mchaNetwork/github-proxy">github-proxy</a>
+			</footer>
+		</div>
+	</div>
+</body>
+
+</html>
