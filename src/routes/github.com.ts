@@ -120,6 +120,7 @@ app.add('POST', '/:user/:repo/git-upload-pack', async (request, context) => {
 	}
 
 	return fetch(`https://github.com/${user}/${repo}/git-upload-pack`, {
+		method: 'POST',
 		body: request.body,
 		headers,
 	});
