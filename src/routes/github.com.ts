@@ -110,6 +110,7 @@ app.add('POST', '/:user/:repo/git-upload-pack', async (request, context) => {
 	const headers = new Headers();
 	const protocol = request.headers.get('git-protocol');
 	const type = request.headers.get('content-type');
+	const encoding = request.headers.get('content-encoding');
 
 	if (protocol) {
 		headers.set('Git-Protocol', protocol);
@@ -117,6 +118,10 @@ app.add('POST', '/:user/:repo/git-upload-pack', async (request, context) => {
 
 	if (type) {
 		headers.set('Content-Type', type);
+	}
+
+	if (encoding) {
+		headers.set('Content-Encoding', encoding);
 	}
 
 	return fetch(`https://github.com/${user}/${repo}/git-upload-pack`, {
