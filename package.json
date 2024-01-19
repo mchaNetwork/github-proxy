@@ -53,13 +53,13 @@
     "worktop": "next"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240117.0",
-    "@size-limit/preset-small-lib": "^11.0.2",
-    "parcel": "^2.11.0",
-    "rimraf": "^5.0.5",
-    "size-limit": "^11.0.2",
-    "wrangler": "^3.22.3",
-    "xo": "^0.56.0"
+    "@cloudflare/workers-types": "4.20240117.0",
+    "@size-limit/preset-small-lib": "11.0.2",
+    "parcel": "2.11.0",
+    "rimraf": "5.0.5",
+    "size-limit": "11.0.2",
+    "wrangler": "3.23.0",
+    "xo": "0.56.0"
   },
   "peerDependencies": {
     "typescript": "^5.3"
