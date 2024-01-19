@@ -29,20 +29,21 @@ app.add('GET', '/:user/:repo/releases/download/:tag/:artifact', async (request, 
 });
 
 app.add('GET', '/:user/:repo/archive/*', async (_, context) => {
-	const {user, repo, '*': ref} = context.params;
+	const {user, repo, '*': wild} = context.params;
 	if (forbidUser(user) || forbidRepo({user, repo})) {
 		return reply(403);
 	}
 
 	let format: ArchiveFormat;
-
-	if (ref.endsWith('.tar.gz')) {
+	if (wild.endsWith('.tar.gz')) {
 		format = 'tar.gz';
-	} else if (ref.endsWith('.zip')) {
+	} else if (wild.endsWith('.zip')) {
 		format = 'zip';
 	} else {
 		return reply(404, 'Not Found');
 	}
+
+	const ref = wild.slice(0, ~format.length);
 
 	return codeload(user, repo, format, ref);
 });
