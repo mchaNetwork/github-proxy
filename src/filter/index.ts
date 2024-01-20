@@ -1,6 +1,6 @@
 export type Condition<T> = (value: T) => boolean;
 
-/** Convert strings in rule JSON to a case-insensitive Condition<string>. */
+/** Convert strings in rule to a case-insensitive Condition<string>. */
 export function matcher(pattern: string): Condition<string> {
 	if (pattern.length >= 2
 		&& pattern.startsWith('/')
