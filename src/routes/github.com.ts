@@ -7,8 +7,9 @@ import {raw} from './raw.githubusercontent.com';
 
 const app = new Router<Bindings>();
 
-app.add('GET', '/:user/:repo/releases/download/:tag/:artifact', async (request, context) => {
-	const {user, repo, tag, artifact} = context.params;
+// Tag names can include slashes, bailing out.
+app.add('GET', '/:user/:repo/releases/download/*', async (request, context) => {
+	const {user, repo, '*': wild} = context.params;
 	if (forbidUser(user) || forbidRepo({user, repo})) {
 		return reply(403);
 	}
@@ -20,7 +21,29 @@ app.add('GET', '/:user/:repo/releases/download/:tag/:artifact', async (request, 
 	}
 
 	return fetch(
-		`https://github.com/${user}/${repo}/releases/download/${tag}/${artifact}`,
+		`https://github.com/${user}/${repo}/releases/download/${wild}`,
+		{
+			redirect: 'follow',
+			headers: range ? headers : undefined,
+		},
+	);
+});
+
+// GitHub uses this to prevent confusion between a tag named `latest` and the latest release
+app.add('GET', '/:user/:repo/releases/latest/download/:artifact', async (request, context) => {
+	const {user, repo, artifact} = context.params;
+	if (forbidUser(user) || forbidRepo({user, repo})) {
+		return reply(403);
+	}
+
+	const range = request.headers.get('content-range');
+	const headers = new Headers();
+	if (range !== null) {
+		headers.set('content-range', range);
+	}
+
+	return fetch(
+		`https://github.com/${user}/${repo}/releases/latest/download/${artifact}`,
 		{
 			redirect: 'follow',
 			headers: range ? headers : undefined,
