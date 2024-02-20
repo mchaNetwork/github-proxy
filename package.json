@@ -9,7 +9,7 @@
   "main": "dist/_worker.js",
   "scripts": {
     "build": "rimraf dist && parcel build",
-    "deploy": "npm run build && wrangler pages deploy dist",
+    "deploy": "npm run test && npm run build && wrangler pages deploy dist",
     "lint": "eslint .",
     "size": "size-limit",
     "start": "wrangler pages dev dist --compatibility-date=2024-01-01",
