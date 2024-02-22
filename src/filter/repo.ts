@@ -8,8 +8,6 @@ type Repo = {
 const repos = (process.env.GHP_BLOCKED_REPOS ?? '').split(',');
 const rules = repos.map(pattern => matcher(pattern));
 
-const forbid: Condition<Repo> = ({user, repo}) => {
-	return rules.some(m => m(`${user}/${repo}`));
-};
+const forbid: Condition<Repo> = ({user, repo}) => rules.some(m => m(`${user}/${repo}`));
 
 export default forbid;

@@ -66,6 +66,7 @@ app.add('GET', '/:user/:repo/archive/*', async (_, context) => {
 		return reply(404, 'Not Found');
 	}
 
+	// eslint-disable-next-line no-bitwise
 	const reference = wild.slice(0, ~format.length);
 
 	return codeload(user, repo, format, reference);
@@ -103,7 +104,9 @@ app.add('GET', '/:user/:repo/info/refs', async (request, context) => {
 	if (!service) {
 		return reply(403, `Please upgrade your git client.
 GitHub.com no longer supports git over dumb-http: https://github.com/blog/809`);
-	} else if (service !== 'git-upload-pack') {
+	}
+
+	if (service !== 'git-upload-pack') {
 		return reply(404, 'Not Found');
 	}
 

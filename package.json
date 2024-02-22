@@ -25,7 +25,10 @@
       "ecmaVersion": "latest",
       "sourceType": "module"
     },
-    "extends": "./node_modules/xo/config/plugins.cjs",
+    "extends": [
+      "xo",
+      "./node_modules/xo/config/plugins.cjs"
+    ],
     "overrides": [
       {
         "files": [
