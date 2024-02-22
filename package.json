@@ -16,6 +16,14 @@
     "test": "bun run lint && bun run size"
   },
   "browserslist": "Firefox ESR, iOS >= 12.5, Chrome >= 87",
+  "xo": {
+    "rules": {
+      "@typescript-eslint/ban-types": "off",
+      "import/extensions": "off",
+      "import/no-named-as-default": "off",
+      "n/prefer-global/process": "off"
+    }
+  },
   "eslintConfig": {
     "env": {
       "es2024": true,
