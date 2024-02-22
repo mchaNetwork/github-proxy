@@ -66,27 +66,27 @@ app.add('GET', '/:user/:repo/archive/*', async (_, context) => {
 		return reply(404, 'Not Found');
 	}
 
-	const ref = wild.slice(0, ~format.length);
+	const reference = wild.slice(0, ~format.length);
 
-	return codeload(user, repo, format, ref);
+	return codeload(user, repo, format, reference);
 });
 
 app.add('GET', '/:user/:repo/zipball/*', async (_, context) => {
-	const {user, repo, '*': ref} = context.params;
+	const {user, repo, '*': reference} = context.params;
 	if (forbidUser(user) || forbidRepo({user, repo})) {
 		return reply(403);
 	}
 
-	return codeload(user, repo, 'legacy.zip', ref);
+	return codeload(user, repo, 'legacy.zip', reference);
 });
 
 app.add('GET', '/:user/:repo/tarball/*', async (_, context) => {
-	const {user, repo, '*': ref} = context.params;
+	const {user, repo, '*': reference} = context.params;
 	if (forbidUser(user) || forbidRepo({user, repo})) {
 		return reply(403);
 	}
 
-	return codeload(user, repo, 'legacy.tar.gz', ref);
+	return codeload(user, repo, 'legacy.tar.gz', reference);
 });
 
 app.add('GET', '/:user/:repo/raw/*', async (_, context) => {

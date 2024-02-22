@@ -9,16 +9,16 @@ export type ArchiveFormat =
 	| 'legacy.tar.gz'
 	| 'legacy.zip';
 
-export async function codeload(user: string, repo: string, format: ArchiveFormat, ref: string) {
+export async function codeload(user: string, repo: string, format: ArchiveFormat, reference: string) {
 	return fetch(
-		`https://codeload.github.com/${user}/${repo}/${format}/${ref}`,
+		`https://codeload.github.com/${user}/${repo}/${format}/${reference}`,
 	);
 }
 
 const app = new Router<Bindings>();
 
 app.add('GET', '/:user/:repo/:format/*', async (_, context) => {
-	const {user, repo, format, '*': ref} = context.params;
+	const {user, repo, format, '*': reference} = context.params;
 	if (forbidUser(user) || forbidRepo({repo, user})) {
 		return reply(403);
 	}
@@ -36,7 +36,7 @@ app.add('GET', '/:user/:repo/:format/*', async (_, context) => {
 		}
 	}
 
-	return codeload(user, repo, format, ref);
+	return codeload(user, repo, format, reference);
 });
 
 export default app;
