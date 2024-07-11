@@ -56,7 +56,7 @@
     "worktop": "next"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20240620.0",
+    "@cloudflare/workers-types": "4.20240701.0",
     "@size-limit/preset-small-lib": "11.1.4",
     "parcel": "2.12.0",
     "rimraf": "5.0.9",
