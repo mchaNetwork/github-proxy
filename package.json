@@ -62,7 +62,7 @@
     "rimraf": "5.0.9",
     "size-limit": "11.1.4",
     "wrangler": "3.67.1",
-    "xo": "0.59.2"
+    "xo": "0.59.3"
   },
   "peerDependencies": {
     "typescript": "^5.3"
