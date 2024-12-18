@@ -29,7 +29,7 @@
     "@mochaa/eslintrc": "0.1.12",
     "@size-limit/preset-small-lib": "11.1.6",
     "eslint": "9.17.0",
-    "parcel": "2.12.0",
+    "parcel": "2.13.3",
     "rimraf": "6.0.1",
     "size-limit": "11.1.6",
     "svgo": "3.3.2",
