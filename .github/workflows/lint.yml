@@ -1,0 +1,20 @@
+name: lint
+on:
+  push:
+  pull_request:
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - uses: actions/cache@v4
+        id: cache-packages
+        with:
+          path: |
+            ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+      - if: steps.cache-packages.outputs.cache-hit != 'true'
+        run: bun i --frozen-lockfile
+
+      - run: bun lint

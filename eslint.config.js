@@ -1,3 +1,7 @@
-import rules from '@mochaa/eslintrc';
+import {configBuilder} from '@mochaa/eslintrc';
 
-export default rules;
+export default configBuilder({}, {
+	rules: {
+		'node/prefer-global/process': 'off',
+	},
+});

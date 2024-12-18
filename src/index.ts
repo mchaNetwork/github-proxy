@@ -7,9 +7,7 @@ app.mount('/https:/', routes);
 app.mount('/http:/', routes);
 bind(app);
 
-app.add('GET', /(?:)/, async (request, context) => {
-	console.log(request.url);
-	return context.bindings.ASSETS.fetch(request);
-});
+// eslint-disable-next-line regexp/no-empty-group
+app.add('GET', /(?:)/, async (request, context) => context.bindings.ASSETS.fetch(request));
 
 export default app;

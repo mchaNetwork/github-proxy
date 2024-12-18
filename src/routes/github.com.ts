@@ -24,7 +24,7 @@ app.add('GET', '/:user/:repo/releases/download/*', async (request, context) => {
 		`https://github.com/${user}/${repo}/releases/download/${wild}`,
 		{
 			redirect: 'follow',
-			headers: range ? headers : undefined,
+			headers: range === null ? headers : undefined,
 		},
 	);
 });
@@ -46,7 +46,7 @@ app.add('GET', '/:user/:repo/releases/latest/download/:artifact', async (request
 		`https://github.com/${user}/${repo}/releases/latest/download/${artifact}`,
 		{
 			redirect: 'follow',
-			headers: range ? headers : undefined,
+			headers: range === null ? headers : undefined,
 		},
 	);
 });
@@ -101,7 +101,7 @@ app.add('GET', '/:user/:repo/raw/*', async (_, context) => {
 
 app.add('GET', '/:user/:repo/info/refs', async (request, context) => {
 	const service = context.url.searchParams.get('service');
-	if (!service) {
+	if (service === null) {
 		return reply(403, `Please upgrade your git client.
 GitHub.com no longer supports git over dumb-http: https://github.com/blog/809`);
 	}
@@ -118,7 +118,7 @@ GitHub.com no longer supports git over dumb-http: https://github.com/blog/809`);
 	const headers = new Headers();
 	const protocol = request.headers.get('git-protocol');
 
-	if (protocol) {
+	if (protocol !== null) {
 		headers.set('Git-Protocol', protocol);
 	}
 
@@ -138,15 +138,15 @@ app.add('POST', '/:user/:repo/git-upload-pack', async (request, context) => {
 	const type = request.headers.get('content-type');
 	const encoding = request.headers.get('content-encoding');
 
-	if (protocol) {
+	if (protocol !== null) {
 		headers.set('Git-Protocol', protocol);
 	}
 
-	if (type) {
+	if (type !== null) {
 		headers.set('Content-Type', type);
 	}
 
-	if (encoding) {
+	if (encoding !== null) {
 		headers.set('Content-Encoding', encoding);
 	}
 
