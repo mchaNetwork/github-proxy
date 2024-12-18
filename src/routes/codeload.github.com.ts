@@ -10,9 +10,7 @@ export type ArchiveFormat =
 	| 'legacy.zip';
 
 export async function codeload(user: string, repo: string, format: ArchiveFormat, reference: string) {
-	return fetch(
-		`https://codeload.github.com/${user}/${repo}/${format}/${reference}`,
-	);
+	return fetch(`https://codeload.github.com/${user}/${repo}/${format}/${reference}`);
 }
 
 const app = new Router<Bindings>();

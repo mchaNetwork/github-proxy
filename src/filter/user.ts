@@ -1,4 +1,4 @@
-import {matcher, type Condition} from '.';
+import {type Condition, matcher} from '.';
 
 const users = (process.env.GHP_BLOCKED_USERS ?? '').split(',');
 const rules = users.map(pattern => matcher(pattern));

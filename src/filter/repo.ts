@@ -1,4 +1,4 @@
-import {matcher, type Condition} from '.';
+import {type Condition, matcher} from '.';
 
 type Repo = {
 	user: string;

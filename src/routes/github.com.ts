@@ -2,7 +2,7 @@ import {Router} from 'worktop';
 import {reply} from 'worktop/response';
 import forbidRepo from '../filter/repo';
 import forbidUser from '../filter/user';
-import {codeload, type ArchiveFormat} from './codeload.github.com';
+import {type ArchiveFormat, codeload} from './codeload.github.com';
 import {raw} from './raw.githubusercontent.com';
 
 const app = new Router<Bindings>();
