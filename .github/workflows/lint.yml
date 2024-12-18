@@ -14,7 +14,5 @@ jobs:
           path: |
             ~/.bun/install/cache
           key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
-      - if: steps.cache-packages.outputs.cache-hit != 'true'
-        run: bun i --frozen-lockfile
-
+      - run: bun i --frozen-lockfile
       - run: bun lint
