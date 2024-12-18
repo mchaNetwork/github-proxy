@@ -35,40 +35,6 @@
     "svgo": "3.3.2",
     "wrangler": "3.97.0"
   },
-  "eslintConfig": {
-    "env": {
-      "es2024": true,
-      "node": true
-    },
-    "parserOptions": {
-      "ecmaVersion": "latest",
-      "sourceType": "module"
-    },
-    "extends": [
-      "xo",
-      "./node_modules/xo/config/plugins.cjs"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "*.ts",
-          "*.tsx"
-        ],
-        "extends": [
-          "xo-typescript"
-        ],
-        "rules": {
-          "@typescript-eslint/ban-types": "off",
-          "import/extensions": "off",
-          "import/no-named-as-default": "off",
-          "n/prefer-global/process": "off"
-        }
-      }
-    ],
-    "ignorePatterns": [
-      "dist"
-    ]
-  },
   "@parcel/transformer-css": {
     "drafts": {
       "nesting": true
