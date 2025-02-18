@@ -24,7 +24,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "4.20250214.0",
     "@mochaa/eslintrc": "0.1.12",
-    "@size-limit/preset-small-lib": "11.1.6",
+    "@size-limit/preset-small-lib": "11.2.0",
     "eslint": "9.20.1",
     "parcel": "2.13.3",
     "rimraf": "6.0.1",
