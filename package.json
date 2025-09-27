@@ -22,7 +22,7 @@
     "worktop": "next"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20250926.0",
+    "@cloudflare/workers-types": "4.20250927.0",
     "@mochaa/eslintrc": "0.1.12",
     "@size-limit/preset-small-lib": "11.2.0",
     "eslint": "9.36.0",
