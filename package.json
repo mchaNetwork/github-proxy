@@ -30,7 +30,7 @@
     "rimraf": "6.0.1",
     "size-limit": "11.2.0",
     "svgo": "3.3.2",
-    "typescript": "5.9.2",
+    "typescript": "5.9.3",
     "wrangler": "3.114.14"
   },
   "@parcel/transformer-css": {
