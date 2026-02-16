@@ -27,7 +27,7 @@
     "@size-limit/preset-small-lib": "11.2.0",
     "eslint": "9.39.2",
     "parcel": "2.16.4",
-    "rimraf": "6.1.2",
+    "rimraf": "6.1.3",
     "size-limit": "11.2.0",
     "svgo": "3.3.2",
     "typescript": "5.9.3",
