@@ -18,7 +18,7 @@
   "browserslist": "Firefox ESR, iOS >= 12.5, Chrome >= 87",
   "dependencies": {
     "nord": "nordtheme/nord",
-    "ress": "^5.0.2",
+    "ress": "^6.0.0",
     "worktop": "next"
   },
   "devDependencies": {
