@@ -24,11 +24,11 @@
   "devDependencies": {
     "@cloudflare/workers-types": "4.20260702.1",
     "@mochaa/eslintrc": "0.1.12",
-    "@size-limit/preset-small-lib": "11.2.0",
+    "@size-limit/preset-small-lib": "13.0.3",
     "eslint": "9.39.5",
     "parcel": "2.16.4",
     "rimraf": "6.1.3",
-    "size-limit": "11.2.0",
+    "size-limit": "13.0.3",
     "svgo": "3.3.4",
     "typescript": "5.9.3",
     "wrangler": "3.114.17"
