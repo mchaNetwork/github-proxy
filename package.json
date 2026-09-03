@@ -31,7 +31,7 @@
     "size-limit": "11.2.0",
     "svgo": "3.3.4",
     "typescript": "5.9.3",
-    "wrangler": "3.114.17"
+    "wrangler": "4.129.0"
   },
   "@parcel/transformer-css": {
     "drafts": {
