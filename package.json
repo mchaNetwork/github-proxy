@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20260702.1",
-    "@mochaa/eslintrc": "0.1.12",
+    "@mochaa/eslintrc": "0.3.1",
     "@size-limit/preset-small-lib": "11.2.0",
     "eslint": "9.39.5",
     "parcel": "2.16.4",
